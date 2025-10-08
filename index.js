@@ -58,7 +58,7 @@ app.get("/", (req, res) => {
 
 app.use(
   "/playground",
-  swaggerUi.serve,
+  swaggerUi.server,
   swaggerUi.setup(docs.swaggerDocument, docs.options),
 );
 
