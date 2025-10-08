@@ -1,5 +1,8 @@
 const axios = require("axios");
-const fetch = require("node-fetch");
+let fetch;
+(async () => {
+  fetch = (await import('node-fetch')).default;
+})();
 const fs = require("fs").promises;
 const path = require("path");
 
