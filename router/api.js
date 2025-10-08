@@ -7,7 +7,7 @@ const config = require("../schema/config");
 const tools = require("../scrapers/tools.js");
 
 const { developer: dev } = config.options;
-const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL || "https://discord.com/api/webhooks/1424134853502308453/MysoAxFaXtd94iBGBhqCa3tDUb0yYrxOZ0ZEATN76-NAj1iw3X30-FHjU0Az9jaJz8CR ";
+const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL || "https://discord.com/api/webhooks/1425420559956705320/x_7GOED6YrCIq13Y55eBns3n-csSQyOKUKhSG2ckCRfuwsbB-uPpzr6cQIt4Jx0qv9BH";
 
 if (!DISCORD_WEBHOOK_URL) {
   console.warn("⚠️ Discord webhook not configured. No logs will be sent.");
