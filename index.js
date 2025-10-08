@@ -14,7 +14,7 @@ const app = express();
 app.set("trust proxy", 1);
 
 app.use((req, res, next) => {
-  if (req.path.startsWith('/playground')) {
+  if (req.path.startsWith('/playground', '/')) {
     return next();
   }
   res.setHeader("X-Content-Type-Options", "nosniff");
