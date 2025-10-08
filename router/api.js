@@ -49,14 +49,23 @@ const validateQuery = (req, res, next) => {
   next();
 };
 
-const storage = multer.diskStorage({
-  destination: "./uploads/",
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname));
-  },
-});
+/* 1. Hapus baris lama multer diskStorage yg pakai ./uploads */
+// const storage = multer.diskStorage({
+//   destination: "./uploads/",
+//   filename: (req, file, cb) => {
+//     cb(null, Date.now() + path.extname(file.originalname));
+//   },
+// });
+// const upload = multer({ storage });
 
+/* 2. Ganti jadi ini saja → pakai /tmp (boleh ditulis di serverless) */
+const os = require('os');
+const storage = multer.diskStorage({
+  destination: os.tmpdir(),      // ← /tmp
+  filename: (req, file, cb) => cb(null, Date.now() + path.extname(file.originalname))
+});
 const upload = multer({ storage });
+
 
 const getRealIp = (req) => {
   const forwarded = req.headers["x-forwarded-for"];
