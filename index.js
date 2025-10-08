@@ -59,10 +59,15 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "resources", "index.html"));
 });
 
+// Override options untuk HAPUS customJs & customCssUrl
+const safeOptions = { ...docs.options };
+delete safeOptions.customJs;
+delete safeOptions.customCssUrl;
+
 app.use(
   "/playground",
   swaggerUi.serve,
-  swaggerUi.setup(docs.swaggerDocument, docs.options),
+  swaggerUi.setup(docs.swaggerDocument, safeOptions),
 );
 
 app.use((req, res, next) => {
