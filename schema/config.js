@@ -1,15 +1,15 @@
 const options = {
-  name: "HaewonAPIs",
-  developer: "@Liwirya",
+  name: "MiwaxoAPIs",
+  developer: "@Elvin",
   port: 1904,
-  webName: "HaewonAPIs Playground",
+  webName: "MiwaxoAPIs Playground",
   description: "Rest APIs",
   favicon:
     "https://iili.io/KWpbDJe.jpg",
 };
 
 const host = {
-  BASE_URL: "http://localhost:1904", // Ganti dengan URL yang sesuai
+  BASE_URL: "https://miwaxo-apis.vercel.app", // Ganti dengan URL yang sesuai
   // Contoh: https://domain.com
 };
 
